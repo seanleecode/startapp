@@ -76,9 +76,8 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-contrib-qunit');
   // grunt.loadNpmTasks('grunt-contrib-jshint');
   // grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-serve');
 
   // Default task.
   // grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
-
+  grunt.registerTask('serve',[]);
 };
