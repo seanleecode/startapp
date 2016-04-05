@@ -41,15 +41,24 @@
           version    : 'v2.5'
         });
 
-        FB.ui({
+        FB.ui(
+        {
           method: 'share',
-          href: 'https://developers.facebook.com/docs/'
-        }, function(response){});
-
-        function myFacebookLogin() {
-          FB.login(function(){}, {scope: 'publish_actions'});
+          href: 'https://developers.facebook.com/docs/',
+        },
+        // callback
+        function(response) {
+          if (response && !response.error_message) {
+            alert('Posting completed.');
+          } else {
+            alert('Error while posting.');
+          }
         }
+      );
+
       };
+
+
 
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
