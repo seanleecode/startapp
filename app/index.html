@@ -41,24 +41,15 @@
           version    : 'v2.5'
         });
 
-        FB.ui(
-        {
+        FB.ui({
           method: 'share',
-          href: 'https://developers.facebook.com/docs/',
-        },
-        // callback
-        function(response) {
-          if (response && !response.error_message) {
-            alert('Posting completed.');
-          } else {
-            alert('Error while posting.');
-          }
+          href: 'https://developers.facebook.com/docs/'
+        }, function(response){});
+
+        function myFacebookLogin() {
+          FB.login(function(){}, {scope: 'publish_actions'});
         }
-      );
-
       };
-
-
 
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
@@ -68,23 +59,6 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 
-       function myFacebookLogin() {
-         FB.ui(
-         {
-           method: 'share',
-           href: 'https://developers.facebook.com/docs/',
-         },
-         // callback
-         function(response) {
-           if (response && !response.error_message) {
-             alert('Posting completed.');
-           } else {
-             alert('Error while posting.');
-           }
-         }
-
-         FB.login(function(){}, {scope: 'publish_actions'});
-       }
 
     </script>
 
