@@ -32,6 +32,54 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- FB -->
+    <script>
+
+      var fbApiInit = false;
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '236850553335924',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+        fbApiInit = true;
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+      function myFacebookLogin2(){
+        console.log("LOLOL");
+      }
+
+      function myFacebookLogin(){
+        if(fbApiInit == true){
+
+          console.log("LOL");
+          FB.ui(
+          {
+            method: 'share',
+            href: 'https://developers.facebook.com/docs/',
+          },
+          // callback
+          function(response) {
+            if (response && !response.error_message) {
+              alert('Posting completed.');
+            } else {
+              alert('Error while posting.');
+            }
+          });
+
+        }
+        console.log("LOL22");
+      }
+    </script>
+
 </head>
 
 <body id="page-top">
@@ -93,13 +141,12 @@
                     <p class="text-faded">Start App has everything you need to ensure you no longer need to chase after your friends and associates consent for a social activity!</p>
                     <a href="#" class="btn btn-default btn-xl">Get Started!</a>
                 </div>
-
-                <div
-                  class="fb-like"
-                  data-share="true"
-                  data-width="450"
-                  data-show-faces="true">
-                </div>
+            </div>
+            <div
+              class="fb-like"
+              data-share="true"
+              data-width="450"
+              data-show-faces="true">abc
             </div>
         </div>
     </section>
@@ -287,53 +334,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
 
-    <!-- FB -->
-    <script>
-    var fbApiInit = false;
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '236850553335924',
-          xfbml      : true,
-          version    : 'v2.5'
-        });
 
-        fbApiInit = true;
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
-      function myFacebookLogin2(){
-        console.log("LOLOL");
-      }
-
-      function myFacebookLogin(){
-        if(fbApiInit == true){
-
-          console.log("LOL");
-          FB.ui(
-          {
-            method: 'share',
-            href: 'https://developers.facebook.com/docs/',
-          },
-          // callback
-          function(response) {
-            if (response && !response.error_message) {
-              alert('Posting completed.');
-            } else {
-              alert('Error while posting.');
-            }
-          });
-
-        }
-        console.log("LOL22");
-      }
-    </script>
 
 </body>
 
