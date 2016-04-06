@@ -1,6 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
-
+// http://seanleecode.github.io/startapp/app/
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -11,6 +11,12 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
+    serve: {
+  		options: {
+  			port: 9000
+  		}
+  	},
+
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -80,5 +86,6 @@ module.exports = function(grunt) {
 
   // Default task.
   // grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
-  grunt.registerTask('serve', ['jshint', 'qunit', 'concat', 'uglify']);
+  // grunt.registerTask('serve', ['jshint', 'qunit', 'concat', 'uglify']);
+
 };
